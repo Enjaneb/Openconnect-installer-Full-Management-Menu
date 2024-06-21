@@ -152,7 +152,7 @@ function Questions() {
   done
   # Secondary DNS
   while true; do
-    echo -n "Secondary DNS (Optional): "
+    echo -n "Secondary DNS (Optional : default is 1.1.1.1): "
     read secDns
     if [[ -z "$secDns" ]]; then
       secDns=$SDNS
@@ -405,8 +405,7 @@ function OCSERV_INSTALL() {
   fi
 
   # OCServ Configuration
-  sed -i 's/auth = "pam\[gid-min=1000]"/auth = "radius [config=/etc/radcli/radiusclient.conf,groupconfig=true]"/' $ocservConfig
-  sed -i 's/#auth = "plain[passwd=./sample.passwd,otp=./sample.otp]"/acct = "radius [config=/etc/radcli/radiusclient.conf,groupconfig=true]"/' $ocservConfig
+  sed -i 's/auth = "pam\[gid-min=1000]"/acct = "radius [config=/etc/radcli/radiusclient.conf,groupconfig=true]"/' $ocservConfig
   sed -i "s/tcp-port = 443/tcp-port = $PORT/" $ocservConfig
   sed -i "s/udp-port = 443/#udp-port = $PORT/" $ocservConfig
   sed -i "s/max-same-clients = 2/max-same-clients = ${maxSameClient}/" $ocservConfig
