@@ -96,7 +96,7 @@ function Questions() {
   echo "######################################################################################"
   echo "#Script Name	:  Secure OpenConnect+LetsEncrypt server installer for Ubuntu 18.04 and later."
   echo "#Description	:  With this script you can start your Openconnect+LetsEncrypt server in less than a minute"
-  echo "#Author         :  B-andi-T"
+  echo "#Author         :  B-andi-T"  & Enjaneb
   echo "#Github         :  https://github.com/B-andi-T"
   echo "######################################################################################"
   echo -e "\n${CYAN}Welcome to Openconnect+LetsEncrypt Installer for ubuntu 18.04 and later${EC}\n"
